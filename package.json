@@ -32,7 +32,9 @@
     "test:server": "TZ=UTC jest --config=.jestconfig.json --selectProjects server",
     "vite:dev": "VITE_CJS_IGNORE_WARNING=true vite",
     "vite:build": "VITE_CJS_IGNORE_WARNING=true vite build",
-    "vite:preview": "VITE_CJS_IGNORE_WARNING=true vite preview"
+    "vite:preview": "VITE_CJS_IGNORE_WARNING=true vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "funding": {
     "type": "GitHub Sponsors ❤",
@@ -266,8 +268,16 @@
   "devDependencies": {
     "@babel/cli": "^7.27.2",
     "@babel/preset-typescript": "^7.27.1",
+    "@chromatic-com/storybook": "^3",
     "@faker-js/faker": "^8.4.1",
     "@relative-ci/agent": "^4.3.0",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-onboarding": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/experimental-addon-test": "^8.6.14",
+    "@storybook/react": "^8.6.14",
+    "@storybook/react-vite": "^8.6.14",
+    "@storybook/test": "^8.6.14",
     "@testing-library/react": "^12.0.0",
     "@types/addressparser": "^1.0.3",
     "@types/body-scroll-lock": "^3.1.2",
@@ -334,6 +344,8 @@
     "@types/yauzl": "^2.10.3",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
+    "@vitest/browser": "^3.1.4",
+    "@vitest/coverage-v8": "^3.1.4",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^29.7.0",
     "babel-plugin-transform-inline-environment-variables": "^0.4.4",
@@ -353,6 +365,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.37.3",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-storybook": "^0.12.0",
     "husky": "^8.0.3",
     "i18next-parser": "^8.13.0",
     "jest-cli": "^29.7.0",
@@ -360,14 +373,17 @@
     "jest-fetch-mock": "^3.0.3",
     "lint-staged": "^13.3.0",
     "nodemon": "^3.1.10",
+    "playwright": "^1.52.0",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.8.8",
     "react-refresh": "^0.17.0",
     "rimraf": "^2.5.4",
     "rollup-plugin-webpack-stats": "^2.0.5",
+    "storybook": "^8.6.14",
     "terser": "^5.39.0",
     "typescript": "^5.8.3",
     "vite-plugin-static-copy": "^0.17.0",
+    "vitest": "^3.1.4",
     "yarn-deduplicate": "^6.0.2"
   },
   "resolutions": {
@@ -381,5 +397,10 @@
     "prismjs": "1.30.0"
   },
   "version": "0.84.0",
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  }
 }

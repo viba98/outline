@@ -46,7 +46,6 @@ const ActionButton = React.forwardRef<HTMLButtonElement, Props>(
     ) {
       return null;
     }
-
     const label =
       typeof action.name === "function"
         ? action.name(actionContext)
